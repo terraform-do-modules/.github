@@ -1,4 +1,3 @@
-<img align="centre" src="images/cd_banner.png">
 <p align="center">
   <img src="images/cd_banner.png">
 </p>
