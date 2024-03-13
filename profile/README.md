@@ -1,4 +1,7 @@
 <img align="centre" src="images/cd_banner.png">
+<p align="center">
+  <img src="images/cd_banner.png">
+</p>
 
 Every Organisation - big or small - can operate and stay profitable when running efficiently. They are always on the lookout for a simple cloud with the right pricing for nonmission critical tasks for their application. DigitalOcean is relatively a new entrant and is doing just that - simple and cost-efficient.
 
