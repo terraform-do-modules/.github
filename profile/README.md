@@ -1,6 +1,4 @@
-<p align="center">
-  ![CD Banner - Clean](https://github.com/terraform-do-modules/terraform-do-modules/assets/4303310/cf4f0843-63cb-4745-89ee-0c3508fdd309)
-</p>
+<img align="centre" src="images/cd_banner.png">
 
 Every Organisation - big or small - can operate and stay profitable when running efficiently. They are always on the lookout for a simple cloud with the right pricing for nonmission critical tasks for their application. DigitalOcean is relatively a new entrant and is doing just that - simple and cost-efficient.
 
