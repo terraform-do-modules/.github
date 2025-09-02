@@ -40,13 +40,27 @@
 
 ---
 
-### OUR Open Source Contributions
+### 👐 Open Source Contributions
 | Type | Highlight |
 |------|-----------|
-| **Terraform Modules** | [AWS](https://github.com/clouddrove?tab=repositories), [GCP](https://github.com/clouddrove?tab=repositories), [AZURE](https://github.com/terraform-az-modules?tab=repositories)|
+| **Terraform Modules** | [AWS](https://github.com/clouddrove?q=terraform-aws&type=all&language=&sort=), [GCP](https://github.com/clouddrove?q=terraform-gcp&type=all&language=&sort=), [AZURE](https://github.com/terraform-az-modules)|
 | **Helm Charts** | [helm-charts](https://github.com/clouddrove/helm-charts) |
 | **GitHub Actions** | [Shared Workflows](https://github.com/clouddrove/github-shared-workflows) to standardise CI/CD |
 | **Security Baselines** | Standard infra guardrails (e.g., secure baseline module) |
+
+---
+## 🏗️ Join Our Slack Community
+
+Join our vibrant open-source slack community and embark on an ever-evolving journey with CloudDrove; helping you in moving upwards in your career path.
+Join our vibrant Open Source Slack Community and embark on a learning journey with CloudDrove. Grow with us in the world of DevOps and set your career on a path of consistency.
+
+🌐💬What you'll get after joining this Slack community:
+
+- 🚀 Encouragement to upgrade your best version.
+- 🌈 Learning companionship with our DevOps squad.
+- 🌱 Relentless growth with daily updates on new advancements in technologies.
+
+Join our tech elites [Join Now](https://www.launchpass.com/devops-talks) 🚀
 
 ---
 
