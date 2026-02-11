@@ -1,0 +1,25 @@
+name: Security Scan Gate
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  security-events: write
+  actions: read
+  pull-requests: write
+
+jobs:
+  tfsec:
+    uses: clouddrove/github-shared-workflows/.github/workflows/tfsec.yml@bd958ead76ac7c72acf4976c244c47eef89c84f7
+    with:
+      working_directory: ./
+    secrets:
+      GITHUB: ${{ secrets.GITHUB_TOKEN }}
+
+  checkov:
+    uses: clouddrove/github-shared-workflows/.github/workflows/checkov.yml@bd958ead76ac7c72acf4976c244c47eef89c84f7
+    with:
+      directory: .
+      continue_on_error: 'false'
