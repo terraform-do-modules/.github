@@ -1,0 +1,21 @@
+name: Validate Workflow Templates
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflow-templates/**'
+      - '.github/workflows/validate-workflow-templates.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: actionlint
+        uses: rhysd/actionlint@v1.7.10

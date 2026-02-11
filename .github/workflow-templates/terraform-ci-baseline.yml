@@ -1,0 +1,40 @@
+name: Terraform CI Baseline
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  security-events: write
+  actions: read
+  pull-requests: write
+
+jobs:
+  tf-lint:
+    uses: clouddrove/github-shared-workflows/.github/workflows/tf-lint.yml@bd958ead76ac7c72acf4976c244c47eef89c84f7
+    secrets:
+      GITHUB: ${{ secrets.GITHUB_TOKEN }}
+
+  tfsec:
+    uses: clouddrove/github-shared-workflows/.github/workflows/tfsec.yml@bd958ead76ac7c72acf4976c244c47eef89c84f7
+    with:
+      working_directory: ./
+    secrets:
+      GITHUB: ${{ secrets.GITHUB_TOKEN }}
+
+  checkov:
+    uses: clouddrove/github-shared-workflows/.github/workflows/checkov.yml@bd958ead76ac7c72acf4976c244c47eef89c84f7
+    with:
+      directory: .
+      continue_on_error: 'false'
+
+  gitleaks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+      - name: Run gitleaks
+        uses: gitleaks/gitleaks-action@dcedce43c6f43de0b836d1fe38946645c9c638dc
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
