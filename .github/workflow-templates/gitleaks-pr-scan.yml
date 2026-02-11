@@ -9,12 +9,5 @@ permissions:
 
 jobs:
   gitleaks:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
-
-      - name: Run gitleaks on PR changes
-        uses: gitleaks/gitleaks-action@dcedce43c6f43de0b836d1fe38946645c9c638dc
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    uses: clouddrove/github-shared-workflows/.github/workflows/gitleaks-pr-scan.yml@master
+    secrets: inherit
