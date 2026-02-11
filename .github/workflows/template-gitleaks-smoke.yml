@@ -1,0 +1,20 @@
+name: Template Gitleaks Smoke
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflow-templates/gitleaks-pr-scan.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  template-presence:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+
+      - name: Verify gitleaks template exists
+        run: test -f .github/workflow-templates/gitleaks-pr-scan.yml
