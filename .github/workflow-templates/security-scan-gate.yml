@@ -6,24 +6,20 @@ on:
 
 permissions:
   contents: read
+  security-events: write
+  actions: read
+  pull-requests: write
 
 jobs:
-  security-gate:
-    name: Enforced Security Gate
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+  tfsec:
+    uses: clouddrove/github-shared-workflows/.github/workflows/tfsec.yml@bd958ead76ac7c72acf4976c244c47eef89c84f7
+    with:
+      working_directory: ./
+    secrets:
+      GITHUB: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Run tfsec (hard fail)
-        uses: aquasecurity/tfsec-action@v1.0.3
-        with:
-          soft_fail: false
-
-      - name: Run Checkov (hard fail)
-        uses: bridgecrewio/checkov-action@v12
-        with:
-          directory: .
-          framework: terraform
-          quiet: true
-          soft_fail: false
+  checkov:
+    uses: clouddrove/github-shared-workflows/.github/workflows/checkov.yml@bd958ead76ac7c72acf4976c244c47eef89c84f7
+    with:
+      directory: .
+      continue_on_error: 'false'
