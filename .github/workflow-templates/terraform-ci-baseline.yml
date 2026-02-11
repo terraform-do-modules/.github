@@ -6,39 +6,35 @@ on:
 
 permissions:
   contents: read
+  security-events: write
+  actions: read
+  pull-requests: write
 
 jobs:
-  baseline-security-and-lint:
-    name: tfsec + checkov + tflint + gitleaks
+  tf-lint:
+    uses: clouddrove/github-shared-workflows/.github/workflows/tf-lint.yml@bd958ead76ac7c72acf4976c244c47eef89c84f7
+    secrets:
+      GITHUB: ${{ secrets.GITHUB_TOKEN }}
+
+  tfsec:
+    uses: clouddrove/github-shared-workflows/.github/workflows/tfsec.yml@bd958ead76ac7c72acf4976c244c47eef89c84f7
+    with:
+      working_directory: ./
+    secrets:
+      GITHUB: ${{ secrets.GITHUB_TOKEN }}
+
+  checkov:
+    uses: clouddrove/github-shared-workflows/.github/workflows/checkov.yml@bd958ead76ac7c72acf4976c244c47eef89c84f7
+    with:
+      directory: .
+      continue_on_error: 'false'
+
+  gitleaks:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v3
-
-      - name: Setup TFLint
-        uses: terraform-linters/setup-tflint@v4
-
-      - name: Run TFLint
-        run: |
-          tflint --init
-          tflint --recursive
-
-      - name: Run tfsec
-        uses: aquasecurity/tfsec-action@v1.0.3
-        with:
-          soft_fail: false
-
-      - name: Run Checkov
-        uses: bridgecrewio/checkov-action@v12
-        with:
-          directory: .
-          framework: terraform
-          quiet: true
-
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
       - name: Run gitleaks
-        uses: gitleaks/gitleaks-action@v2
+        uses: gitleaks/gitleaks-action@dcedce43c6f43de0b836d1fe38946645c9c638dc
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
