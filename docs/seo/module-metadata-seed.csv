@@ -1,0 +1,4 @@
+repo,resource,description,topics
+terraform-digitalocean-vpc,vpc,"Terraform module for provisioning and managing DigitalOcean VPC networking primitives.","terraform;terraform-module;digitalocean;networking;vpc"
+terraform-digitalocean-droplet,droplet,"Terraform module for deploying and managing DigitalOcean Droplets with reusable defaults.","terraform;terraform-module;digitalocean;compute;droplet"
+terraform-digitalocean-database,database,"Terraform module for provisioning DigitalOcean managed databases with production-ready defaults.","terraform;terraform-module;digitalocean;database;managed-database"
