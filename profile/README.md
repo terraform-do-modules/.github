@@ -85,5 +85,5 @@ With remarkable client footprints in **American & European corridors**, our cert
 📩 Write to us at **[business@clouddrove.com](mailto:business@clouddrove.com)**  
 
 <p align="center">
-  ⭐ If our Azure modules helped you simplify deployments, we'd appreciate a star!
+  ⭐ If our Digital Ocean modules helped you simplify deployments, we'd appreciate a star!
 </p>
