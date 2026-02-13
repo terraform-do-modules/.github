@@ -1,0 +1,4 @@
+repository,readme,main_tf,variables_tf,outputs_tf,versions_tf,required_providers,required_version,examples_basic,status
+terraform-digitalocean-labels,yes,yes,yes,yes,yes,yes,yes,yes,ready
+terraform-digitalocean-container-registry,yes,yes,yes,yes,yes,yes,yes,yes,ready
+terraform-digitalocean-domain,yes,yes,yes,yes,yes,yes,yes,yes,ready
