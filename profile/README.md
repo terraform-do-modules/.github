@@ -45,7 +45,7 @@
 
 Reference stack: [terraform-do-openclaw](https://github.com/terraform-do-modules/terraform-do-openclaw) deploys OpenClaw on DigitalOcean with these modules.
 
-Modules are published on the [Terraform Registry](https://registry.terraform.io/namespaces/terraform-do-modules) (nfs is coming soon; use its git tag until then). Pin a released version, never `master`.
+Modules are published on the [Terraform Registry](https://registry.terraform.io/namespaces/terraform-do-modules). Pin a released version, never `master`.
 
 ---
 
