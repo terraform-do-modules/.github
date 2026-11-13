@@ -12,12 +12,40 @@
 ---
 
 ### ⚡ What We Do
-- **Infrastructure as Code (IaC):** 20+ opinionated Terraform modules across core DO services.  
+- **Infrastructure as Code (IaC):** 17 opinionated Terraform modules across core DO services.  
 - **Secure by Default:** Modules aligned with DO best practices and security guardrails.  
 - **Consistency:** Standardized naming conventions, tagging, and structure across resources.  
 - **Examples Included:** Every module ships with usage examples to get started quickly.  
 - **Terraform Scanning:** Automated **Checkov** scans ensure compliance and security before release.  
 - **CI/CD Ready:** Designed for GitHub Actions, Azure DevOps, and reusable workflows.  
+
+---
+
+### 📦 Modules
+
+| Module | What it manages | Latest |
+|--------|-----------------|--------|
+| [app](https://github.com/terraform-do-modules/terraform-digitalocean-app) | App Platform apps (PaaS) | [v1.0.10](https://github.com/terraform-do-modules/terraform-digitalocean-app/releases/tag/v1.0.10) |
+| [cdn](https://github.com/terraform-do-modules/terraform-digitalocean-cdn) | CDN endpoints for Spaces | [v1.0.8](https://github.com/terraform-do-modules/terraform-digitalocean-cdn/releases/tag/v1.0.8) |
+| [certificate](https://github.com/terraform-do-modules/terraform-digitalocean-certificate) | TLS certificates | [v1.0.5](https://github.com/terraform-do-modules/terraform-digitalocean-certificate/releases/tag/v1.0.5) |
+| [components](https://github.com/terraform-do-modules/terraform-digitalocean-components) | Wrapper composing the modules below into one stack | [v1.0.5](https://github.com/terraform-do-modules/terraform-digitalocean-components/releases/tag/v1.0.5) |
+| [container-registry](https://github.com/terraform-do-modules/terraform-digitalocean-container-registry) | Container Registry (DOCR) | [v1.0.8](https://github.com/terraform-do-modules/terraform-digitalocean-container-registry/releases/tag/v1.0.8) |
+| [database](https://github.com/terraform-do-modules/terraform-digitalocean-database) | Managed database clusters | [v1.0.8](https://github.com/terraform-do-modules/terraform-digitalocean-database/releases/tag/v1.0.8) |
+| [domain](https://github.com/terraform-do-modules/terraform-digitalocean-domain) | DNS domains and records | [v1.0.7](https://github.com/terraform-do-modules/terraform-digitalocean-domain/releases/tag/v1.0.7) |
+| [droplet](https://github.com/terraform-do-modules/terraform-digitalocean-droplet) | Droplets | [v1.0.7](https://github.com/terraform-do-modules/terraform-digitalocean-droplet/releases/tag/v1.0.7) |
+| [firewall](https://github.com/terraform-do-modules/terraform-digitalocean-firewall) | Cloud Firewalls | [v1.0.6](https://github.com/terraform-do-modules/terraform-digitalocean-firewall/releases/tag/v1.0.6) |
+| [kubernetes](https://github.com/terraform-do-modules/terraform-digitalocean-kubernetes) | Kubernetes clusters (DOKS) | [v1.1.10](https://github.com/terraform-do-modules/terraform-digitalocean-kubernetes/releases/tag/v1.1.10) |
+| [labels](https://github.com/terraform-do-modules/terraform-digitalocean-labels) | Consistent naming and tags, used by every module | [v1.0.8](https://github.com/terraform-do-modules/terraform-digitalocean-labels/releases/tag/v1.0.8) |
+| [load-balancer](https://github.com/terraform-do-modules/terraform-digitalocean-load-balancer) | Load Balancers | [v1.0.8](https://github.com/terraform-do-modules/terraform-digitalocean-load-balancer/releases/tag/v1.0.8) |
+| [monitoring](https://github.com/terraform-do-modules/terraform-digitalocean-monitoring) | Monitoring alert policies and uptime checks | [v1.0.6](https://github.com/terraform-do-modules/terraform-digitalocean-monitoring/releases/tag/v1.0.6) |
+| [nfs](https://github.com/terraform-do-modules/terraform-digitalocean-nfs) | NFS shares, attachments and snapshots | [v1.0.3](https://github.com/terraform-do-modules/terraform-digitalocean-nfs/releases/tag/v1.0.3) |
+| [spaces](https://github.com/terraform-do-modules/terraform-digitalocean-spaces) | Spaces object storage buckets | [v1.0.8](https://github.com/terraform-do-modules/terraform-digitalocean-spaces/releases/tag/v1.0.8) |
+| [ssh-key](https://github.com/terraform-do-modules/terraform-digitalocean-ssh-key) | SSH keys | [v1.0.8](https://github.com/terraform-do-modules/terraform-digitalocean-ssh-key/releases/tag/v1.0.8) |
+| [vpc](https://github.com/terraform-do-modules/terraform-digitalocean-vpc) | VPC networks | [v1.0.7](https://github.com/terraform-do-modules/terraform-digitalocean-vpc/releases/tag/v1.0.7) |
+
+Reference stack: [terraform-do-openclaw](https://github.com/terraform-do-modules/terraform-do-openclaw) deploys OpenClaw on DigitalOcean with these modules.
+
+Modules are published on the [Terraform Registry](https://registry.terraform.io/namespaces/terraform-do-modules) (nfs is coming soon; use its git tag until then). Pin a released version, never `master`.
 
 ---
 
@@ -32,11 +60,11 @@
 
 
 ### 🌟 Why Terraform DO Modules?
-1. **Reusable building blocks** — Composable modules for any workload.  
-3. **Secure defaults** — Security guardrails integrated into every module.  
-4. **Production-ready** — HA, scalability, and compliance baked in.  
-5. **Developer-friendly** — Examples, variable descriptions, and outputs included.  
-6. **Automation focused** — Compatible with GitOps, CI/CD, and IaC pipelines.  
+1. **Reusable building blocks**: Composable modules for any workload.  
+2. **Secure defaults**: Security guardrails integrated into every module.  
+3. **Production-ready**: HA, scalability, and compliance baked in.  
+4. **Developer-friendly**: Examples, variable descriptions, and outputs included.  
+5. **Automation focused**: Compatible with GitOps, CI/CD, and IaC pipelines.  
 
 ---
 
